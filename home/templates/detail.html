@@ -1,0 +1,175 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} {{details.title}} {% endblock %}
+
+{% block content %}
+
+    <!-- Top Slider -->
+    
+    <div class="top_slider">
+        <div class="top_slider_body">
+            <marquee behavior="scroll" direction="left" scrollamount="10">
+            {% for image in images %}
+                <a href = "#"><img src = "{{image.img.url}}"></a> 
+            {% endfor %}
+            </marquee>
+        </div>
+    </div>
+
+    <!-- Top Slider -->
+
+
+    <!-- Filters -->
+    
+    <div class = "mx-auto mb-4" >
+        <nav class="navbar navbar-expand-sm navbar-light" style = "background-image: linear-gradient(to left, #64b3f4, #c2e59c);">
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <div class = "container">
+                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle ml-4" style = "font-size: 20px;" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Movies
+                            </a>
+                            <div class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink"  style = "background-image: linear-gradient(to left, #c2e59c, #64b3f4);">
+                            <a class="dropdown-item" href="#" style = "font-size: 20px;">Adventure</a>
+                            <a class="dropdown-item" href="#" style = "font-size: 20px;">Comedy</a>
+                            <a class="dropdown-item" href="#" style = "font-size: 20px;">Dual-Audio</a>
+                            <a class="dropdown-item" href="#" style = "font-size: 20px;">Fantasy</a>
+                            <a class="dropdown-item" href="#" style = "font-size: 20px;">History</a>
+                            <a class="dropdown-item" href="#" style = "font-size: 20px;">Horror</a>
+                            <a class="dropdown-item" href="#" style = "font-size: 20px;">Thriller</a>
+                            <a class="dropdown-item" href="#" style = "font-size: 20px;">Mystery</a>
+                            <a class="dropdown-item" href="#" style = "font-size: 20px;">Romance</a>
+                            <a class="dropdown-item" href="#" style = "font-size: 20px;">Sci-Fi</a>
+                            </div>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle ml-4" style = "font-size: 20px;" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Tv-Shows
+                            </a>
+                            <div class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink"  style = "background-image: linear-gradient(to left, #c2e59c, #64b3f4);">
+                            <a class="dropdown-item" href="#" style = "font-size: 20px;">Hindi-Tv series</a>
+                            <a class="dropdown-item" href="#" style = "font-size: 20px;">TV-Series(Dubbed)</a>
+                            <a class="dropdown-item" href="#" style = "font-size: 20px;">Complete Season</a>
+                            </div>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle ml-4" style = "font-size: 20px;" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            WWE
+                            </a>
+                            <div class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink"  style = "background-image: linear-gradient(to left,  #c2e59c, #64b3f4);">
+                            <a class="dropdown-item" href="#" style = "font-size: 20px;"> WWE-Hindi</a>
+                            <a class="dropdown-item" href="#" style = "font-size: 20px;">Wrestling</a>
+                            <a class="dropdown-item" href="#" style = "font-size: 20px;">UFC</a>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </div>
+        
+    <!-- Filters -->
+
+
+
+
+    <!--MAIN_BODY-->
+
+    <div class = "main_body text-center">
+        <h1 style = "font-weight: bold;"> {{details.name}} </h1>
+
+        <hr class = "frst">
+
+        <div class = "main_image">
+            <img src = "{{details.main_img.url}}">
+        </div>
+
+        <div class = "help_download">
+            <a href = "#"><p> [ How to Download ] </p></a>
+        </div> 
+
+        <div class = "main_points">
+            <p><b> Title: </b> {{details.title}} </p>
+            <p><b> IMDB Rating: </b> {{details.imdb}}/10 </p>
+            <p><b> Quality: </b> 480p | 720p | 1080p </p>
+            <p><b> Language: </b> {{details.language1|default_if_none:""}} {{details.language2|default_if_none:""}} </p>
+            <p><b> Genre: </b> {{details.Genre1|default_if_none:""}}  {{details.Genre2|default_if_none:""}}  {{details.Genre3|default_if_none:""}}  {{details.Genre4|default_if_none:""}} </p>
+        </div>
+
+        <div class = "screenshot">
+
+            <h1> Screenshots </h1>
+
+            <div class = "screen">
+                <div class = "image">
+                    <img src = "{{details.screenshot1.url}}">
+                </div>
+                <div class = "image">
+                    <img src = "{{details.screenshot2.url}}">
+                </div>
+                <div class = "image">
+                    <img src = "{{details.screenshot3.url}}">
+                </div>
+                <div class = "image">
+                    <img src = "{{details.screenshot4.url}}">
+                </div>
+            </div>
+        </div>
+
+        <div class = "links">
+            <div class = "online">
+                <a href = "{{details.online}}" target="_blank"><p> : Watch Online : </p></a>
+            </div>
+
+            <div class = "download">
+                <p> : Download Links : </p>
+                <div class = "variant">
+                    <a href = "{{details.link_480}}" target="_blank"><h1>[ 480p Download Links ]</h1></a>
+                    <hr />
+                    <a href = "{{details.link_720}}" target="_blank"><h1>[ 720p Download Links ]</h1></a>
+                    <hr />
+                    <a href = "{{details.link_1080}}" target="_blank"><h1>[ 1080p Download Links ]</h1></a>
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class = "trailer">
+            <div class = "trailer_head">
+                <h1> Watch "{{details.title}}" trailer Online: </h1>
+            </div>
+            <div class = "frame">
+                <iframe id="ytplayer" type="text/html" width="1000" height="500"
+                src="{{details.yt_link}}"
+                frameborder="0"></iframe>
+            </div>
+        </div>
+
+        <div class = "info text-center" style = "margin-bottom: 200px;">
+            <div class = "info_title">
+                <h1> {{details.title}} Info: </h1>
+            </div>
+            <div class = "info_desc">
+                <p> {{details.desc}} </p>
+            </div>
+        </div>
+
+    </div>
+
+    <!--MAIN_BODY-->
+
+
+{% endblock %}

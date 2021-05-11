@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} Home {% endblock %}
+
+{% block content %}
+ 
+
+
+        <!-- Top Slider -->
+    
+        <div class="top_slider">
+            <div class="top_slider_body">
+                <marquee behavior="scroll" direction="left" scrollamount="10">
+                {% for slide in slides %}
+                    <a href = "{% url 'detail' slide.id %}"><img src = "{{slide.img.url}}"></a> 
+                {% endfor %}
+                </marquee>
+            </div>
+        </div>
+    
+        <!-- Top Slider -->
+    
+    
+        <!-- Filters -->
+        
+        <div class = "mx-auto mb-4" >
+            <nav class="navbar navbar-expand-sm navbar-light" style = "background-image: linear-gradient(to left, #64b3f4, #c2e59c);">
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                    <div class = "container">
+                        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle ml-4" style = "font-size: 20px;" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Movies
+                                </a>
+                                <div class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink"  style = "background-image: linear-gradient(to left, #c2e59c, #64b3f4);">
+                                <a class="dropdown-item" href="#" style = "font-size: 20px;">Adventure</a>
+                                <a class="dropdown-item" href="#" style = "font-size: 20px;">Comedy</a>
+                                <a class="dropdown-item" href="#" style = "font-size: 20px;">Dual-Audio</a>
+                                <a class="dropdown-item" href="#" style = "font-size: 20px;">Fantasy</a>
+                                <a class="dropdown-item" href="#" style = "font-size: 20px;">History</a>
+                                <a class="dropdown-item" href="#" style = "font-size: 20px;">Horror</a>
+                                <a class="dropdown-item" href="#" style = "font-size: 20px;">Thriller</a>
+                                <a class="dropdown-item" href="#" style = "font-size: 20px;">Mystery</a>
+                                <a class="dropdown-item" href="#" style = "font-size: 20px;">Romance</a>
+                                <a class="dropdown-item" href="#" style = "font-size: 20px;">Sci-Fi</a>
+                                </div>
+                            </li>
+    
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle ml-4" style = "font-size: 20px;" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Tv-Shows
+                                </a>
+                                <div class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink"  style = "background-image: linear-gradient(to left, #c2e59c, #64b3f4);">
+                                <a class="dropdown-item" href="#" style = "font-size: 20px;">Hindi-Tv series</a>
+                                <a class="dropdown-item" href="#" style = "font-size: 20px;">TV-Series(Dubbed)</a>
+                                <a class="dropdown-item" href="#" style = "font-size: 20px;">Complete Season</a>
+                                </div>
+                            </li>
+    
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle ml-4" style = "font-size: 20px;" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                WWE
+                                </a>
+                                <div class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink"  style = "background-image: linear-gradient(to left,  #c2e59c, #64b3f4);">
+                                <a class="dropdown-item" href="#" style = "font-size: 20px;"> WWE-Hindi</a>
+                                <a class="dropdown-item" href="#" style = "font-size: 20px;">Wrestling</a>
+                                <a class="dropdown-item" href="#" style = "font-size: 20px;">UFC</a>
+                                </div>
+                            </li>
+                        </ul>
+    
+                        <form class="form-inline my-2 my-lg-0">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                        </form>
+                    </div>
+                </div> 
+            </nav>
+        </div>
+            
+        <!-- Filters -->
+    
+        <!-- Main Body -->
+    
+        <div class = "container mt-5 mb-5" style = "max-width: 1700px;">
+            <div class = "main_head">
+                <h5> Latest updates! </h5>
+            </div>
+            
+            <div class="product col-lg-10 mx-auto">
+                <div class="container-fluid">
+                    <div class="row mx-5 mt-2">
+                    
+                        {% for main_item in main_items %}
+                        <a href = "{% url 'detail' main_item.id %}">
+                            <div id = "crds" class="card mx-auto" style="width: 15rem; height: 28rem; margin: 20px 25px 20px 25px;">
+                                <img class="card-img-top" style = "height: 19rem;" src="{{main_item.main_img.url}}" alt="Card image cap">
+                                <div class="card-body" style = "background-color: #0000; text-align: center;">
+                                    <h5 style = "font-size: 16px; font-weight: bold; color: black;" class="card-title">{{main_item.title}}</h5>
+                                    <a href="{% url 'detail' main_item.id %}" class="btn btn-outline-danger" style = "width: 100%;">Download</a>
+                                </div>
+                            </div>
+                        </a>
+                        {% endfor %}
+                        
+                    </div>
+                                        
+                    <div class = "container text-center">
+                        {% if main_items.has_previous %}
+                        <a href = "{% url 'index' %}?page={{main_items.previous_page_number}}" class = "btn btn-sm btn-outline-primary"> PrevPage </a>
+                        {% endif %}
+                        {% if main_items.has_next %}
+                        <a href = "{% url 'index' %}?page={{main_items.next_page_number}}" class = "btn btn-sm btn-outline-primary"> NextPage </a>
+                        {% endif %}
+                    </div>    
+                </div>
+            </div>
+        </div>
+    
+        <!-- Main Body -->
+
+{% endblock %}

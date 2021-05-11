@@ -1,0 +1,121 @@
+.main_body{
+    margin: 0px 60px 0px 60px;
+}
+
+.main_body h1{
+    font-size: 30px;
+}
+
+.frst{
+    background: black;
+    height: 3px;
+    width: 100%;
+    border-radius: 50%;
+}
+
+.main_image{
+    margin-top: 70px;
+}
+
+.main_image img{
+    height: 350px;
+    width: 300px;
+    border-radius: 4px;
+}
+
+.help_download{
+    margin-top: 20px;
+}
+
+.help_download a:hover{
+    text-decoration: none;
+}
+
+.help_download a p{
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.main_points p b{
+    color: #333333;
+}
+
+.screen{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.screenshot{
+    margin-top: 50px;
+}
+
+.screenshot h1{
+    font-size: 30px;
+    color: blueviolet;
+}
+
+.screen {
+    margin-top: 30px;
+    display: inline-grid;
+    grid-template-columns: repeat(2, [col-start] 1fr);
+    grid-gap: 10px;      
+}
+
+.screen img{
+    width: 350px;
+    height: 200px;
+}
+
+.links{
+    margin-top: 40px;
+}
+
+.links .online p{
+    font-size: 25px;
+    color:darkmagenta;
+    font-weight: bold;
+}
+
+.links .online a:hover{
+    text-decoration: none;
+}
+
+.download p{
+    font-size: 25px;
+    color: 	#4169E1;
+} 
+
+.variant{
+    margin-top: 40px;
+}
+
+.variant a:hover{
+    text-decoration: none;
+}
+
+.variant h1{
+    font-size: 22px;
+}
+
+.variant hr{
+    width: 50%;
+    background: red;
+    height: 2px;
+    border-radius: 50%;
+}
+
+.trailer{
+    margin-top: 60px;
+}
+
+.frame{
+    margin-top: 30px;
+}
+
+.info{
+    margin: 70px 150px 70px 150px;
+}
+
+.info_title h1{
+    font-weight: bold;
+}
