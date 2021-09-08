@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% load static %}
+ 
+{% block title %} How to download{% endblock %}
+
+{% block content %}
+
+<style>
+    .jumbotron{
+        background-color: #7f8c8d;
+    }
+</style>
+
+<div class = "container">
+        
+    <div class="jumbotron mt-5 mb-4">
+
+        <h1> STEP-1 </h1>
+        <img src = "{% static '1.png' %}" style = "height: 450px; width: 950px">
+        <hr>
+        <p class="lead">Select the link with which you want to continue (This method works on both downloading or watchin online).</p>
+    </div>
+
+    <div class="jumbotron mt-5 mb-4">
+
+        <h1> STEP-2 </h1>
+        <img src = "{% static '6.png' %}" style = "height: 450px; width: 950px">
+        <hr>
+        <p class="lead">Click on "I am not a robot" button to continue.</p>
+    </div>
+
+    <div class="jumbotron mt-5 mb-4">
+
+        <h1> STEP-3 </h1>
+        <img src = "{% static '3.png' %}" style = "height: 450px; width: 950px">
+        <hr>
+        <p class="lead">Please wait for a few seconds until the button for link generations appears.</p>
+    </div>
+
+    <div class="jumbotron mt-5 mb-4">
+
+        <h1> STEP-4 </h1>
+        <img src = "{% static '4.png' %}" style = "height: 450px; width: 950px">
+        <hr>
+        <p class="lead">Click on the "Click to Generate Link" button to continue.</p>
+    </div>
+
+    <div class="jumbotron mt-5 mb-4">
+
+        <h1> STEP-5 </h1>
+        <img src = "{% static '5.png' %}" style = "height: 450px; width: 950px">
+        <hr>
+        <p class="lead">Please wait for a few seconds until the button for download link appears.</p>
+    </div>
+
+    <div class="jumbotron mt-5 mb-4">
+
+        <h1> STEP-6 </h1>
+        <img src = "{% static '2.png' %}" style = "height: 450px; width: 950px">
+        <hr>
+        <p class="lead">Click on the "Go to the Download Link" button to continue.</p>
+    </div>
+
+    <div class="jumbotron mt-5 mb-4">
+
+        <h1> STEP-7 </h1>
+        <img src = "{% static '7.png' %}" style = "height: 450px; width: 950px">
+        <hr>
+        <p class="lead">Select any of the source you are comfortable with(I suggest you to use G-Direct options for fast download).</p>
+    </div>
+
+
+</div>
+
+{% endblock %}
