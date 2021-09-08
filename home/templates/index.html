@@ -7,6 +7,11 @@
 {% block content %}
  
 
+    <style>
+        .navbar div div ul li div a{
+            color: #fff;
+        }
+    </style>
 
         <!-- Top Slider -->
     
@@ -26,7 +31,7 @@
         <!-- Filters -->
         
         <div class = "mx-auto mb-4" >
-            <nav class="navbar navbar-expand-sm navbar-light" style = "background-image: linear-gradient(to left, #64b3f4, #c2e59c);">
+            <nav class="navbar navbar-expand-sm navbar-light" style = "background-image: linear-gradient(to left, #7f8c8d, #000000);">
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
                 </button>
@@ -34,10 +39,10 @@
                     <div class = "container">
                         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle ml-4" style = "font-size: 20px;" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle ml-4" style = "font-size: 20px; color: #fff;" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Movies
                                 </a>
-                                <div class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink"  style = "background-image: linear-gradient(to left, #c2e59c, #64b3f4);">
+                                <div class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink"  style = "background-image: linear-gradient(to left, #7f8c8d, #000);">
                                 <a class="dropdown-item" href="#" style = "font-size: 20px;">Adventure</a>
                                 <a class="dropdown-item" href="#" style = "font-size: 20px;">Comedy</a>
                                 <a class="dropdown-item" href="#" style = "font-size: 20px;">Dual-Audio</a>
@@ -52,10 +57,10 @@
                             </li>
     
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle ml-4" style = "font-size: 20px;" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle ml-4" style = "font-size: 20px; color: #fff;" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Tv-Shows
                                 </a>
-                                <div class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink"  style = "background-image: linear-gradient(to left, #c2e59c, #64b3f4);">
+                                <div class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink"  style = "background-image: linear-gradient(to left, #7f8c8d, #000);">
                                 <a class="dropdown-item" href="#" style = "font-size: 20px;">Hindi-Tv series</a>
                                 <a class="dropdown-item" href="#" style = "font-size: 20px;">TV-Series(Dubbed)</a>
                                 <a class="dropdown-item" href="#" style = "font-size: 20px;">Complete Season</a>
@@ -63,10 +68,10 @@
                             </li>
     
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle ml-4" style = "font-size: 20px;" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle ml-4" style = "font-size: 20px; color: #fff;" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 WWE
                                 </a>
-                                <div class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink"  style = "background-image: linear-gradient(to left,  #c2e59c, #64b3f4);">
+                                <div class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink"  style = "background-image: linear-gradient(to left,  #7f8c8d, #000);">
                                 <a class="dropdown-item" href="#" style = "font-size: 20px;"> WWE-Hindi</a>
                                 <a class="dropdown-item" href="#" style = "font-size: 20px;">Wrestling</a>
                                 <a class="dropdown-item" href="#" style = "font-size: 20px;">UFC</a>
@@ -76,7 +81,7 @@
     
                         <form class="form-inline my-2 my-lg-0">
                             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                            <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Search</button>
                         </form>
                     </div>
                 </div> 
@@ -89,7 +94,7 @@
     
         <div class = "container mt-5 mb-5" style = "max-width: 1700px;">
             <div class = "main_head">
-                <h5> Latest updates! </h5>
+                <h5 style = "color: #fff;"> Latest updates! </h5>
             </div>
             
             <div class="product col-lg-10 mx-auto">
@@ -98,7 +103,7 @@
                     
                         {% for main_item in main_items %}
                         <a href = "{% url 'detail' main_item.id %}">
-                            <div id = "crds" class="card mx-auto" style="width: 15rem; height: 28rem; margin: 20px 25px 20px 25px;">
+                            <div id = "crds" class="card mx-auto" style="width: 15rem; height: 28rem; margin: 20px 25px 20px 25px; background-color: #7f8c8d;">
                                 <img class="card-img-top" style = "height: 19rem;" src="{{main_item.main_img.url}}" alt="Card image cap">
                                 <div class="card-body" style = "background-color: #0000; text-align: center;">
                                     <h5 style = "font-size: 16px; font-weight: bold; color: black;" class="card-title">{{main_item.title}}</h5>
