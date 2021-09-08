@@ -81,7 +81,7 @@
     
                         <form class="form-inline my-2 my-lg-0">
                             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Search</button>
+                            <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Search</button>
                         </form>
                     </div>
                 </div> 
@@ -107,7 +107,7 @@
                                 <img class="card-img-top" style = "height: 19rem;" src="{{main_item.main_img.url}}" alt="Card image cap">
                                 <div class="card-body" style = "background-color: #0000; text-align: center;">
                                     <h5 style = "font-size: 16px; font-weight: bold; color: black;" class="card-title">{{main_item.title}}</h5>
-                                    <a href="{% url 'detail' main_item.id %}" class="btn btn-outline-danger" style = "width: 100%;">Download</a>
+                                    <a href="{% url 'detail' main_item.id %}" class="btn btn-warning" style = "width: 100%;">View</a>
                                 </div>
                             </div>
                         </a>
